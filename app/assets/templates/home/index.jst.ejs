@@ -1,0 +1,64 @@
+
+<footer>
+  <div class="ink-grid">
+      <nav class="ink-navigation push-left medium-100 small-100 small-push-left">
+          <ul class="menu horizontal">
+              <li class="active"><a href="#">item</a></li>
+              <li><a href="#">item</a></li>
+              <li><a href="#">item</a></li>
+          </ul>
+      </nav>
+      <p class="push-right small-100">some text</p>
+  </div>
+</footer>
+
+
+<div class="ink-grid">
+
+	<div align="center" class="large-30 push-left content">
+
+		<div class="column-group button-container">
+				<a class="ink-button blue user-button" id="toBoard" href="<%= current_user.id %>/boards">
+				 Visit Your Boards
+				</a>
+		</div>
+
+		<div class="column-group button-container">
+				<button class="ink-button blue  user-button" button id="toSettings">
+					Modify Your Settings
+				</button>
+		</div>
+
+		<div class="column-group button-container">
+			  <button class="ink-button blue large-25 push-center user-button" id="toBin">
+					Check Out Your Bin
+			  </button>
+		</div>
+
+	</div>
+
+	<div class="slide-out-holder large-30">
+
+		<div id="board-preview">
+
+		</div>
+
+		<div id="settings-preview">
+
+		</div>
+
+		<div id="bin-preview">
+
+		</div>
+
+	</div>
+
+		<div class="large-20 sidebar">
+			<div id="user-portrait" class="push-center">
+			</div>
+
+			<div id="user-reminders">
+			</div>
+		</div>
+
+</div>

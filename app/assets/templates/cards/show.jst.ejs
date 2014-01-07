@@ -1,0 +1,15 @@
+<div id="cardHolder<%=card.id%>" class="cardContainer push-center ui-draggable" >
+	<div class="cardTitle push-center" id="cardTitle<%= card.id%>"> <%= card.cardtitle %>
+  	<button class="deleteACard ink-button blue push-left" id="deleteCard<%=card.id%>"> X </button>
+  </div>
+
+	<div class="cardBody push-center" id="cardBody<%=card.id%>">
+			<textarea id="area<%=card.id%>" class="card-input">
+				<% if (card.cardbody !== ""){ %>
+					<%= card.cardbody %>
+				<%	} %>
+
+			</textarea>
+	</div>
+
+</div>

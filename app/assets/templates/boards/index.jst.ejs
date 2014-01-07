@@ -1,0 +1,23 @@
+<% var boards = boards.models %>
+
+<div id="nav_container">
+  <nav class="ink-navigation hide-small">
+    <ul class="menu horizontal flat rounded shadowed grey" id="menu">
+    <li><a id="home" href="#">Home</a></li>
+      <li><a id="boardList" href="/">My Boards</a>
+        <ul class="submenu">
+          <% for(var i = 0; i < boards.length; i++){ %>
+            <li class="indivBoard">
+            	<a href="#<%=boards[i].attributes.id%>/lists" id="<%=boards[i].attributes.id %>">
+								<%= boards[i].attributes.boardtitle %>
+
+							</a>
+            </li>
+          <% } %>
+        </ul>
+        <li><a id="boardForm" href="#">Create New Board</a></li>
+      </ul>
+      <div id="createHolder" style="display: none;"></div>
+    </ul>
+  </nav>
+</div>

@@ -1,0 +1,49 @@
+// Place all the styles related to the lists controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.listOfLists{
+  height: 750px;
+  width: 300px;
+  background-color: #F5DEB3;
+  float: left;
+  margin: 10px;
+  border-radius: 20px;
+
+}
+#list_listtitle{
+  height: 50px;
+  width: 20%;
+}
+
+.list-title{
+	height: 34px;
+	width: 300px;
+}
+
+#listMenu{
+  height: 75px;
+}
+
+#createList{
+  height: 50px;
+  border-radius: 12px;
+  font-size: 20px;
+}
+
+#listButtonHolder{
+  float: right;
+  font-size: 18px;
+
+}
+
+.listContent{
+	height: 90%;
+	width: 90%;
+	background-color: rgb(221, 199, 159);
+	float: right;
+	border-radius: 40px;
+}
+
+#boardTitle{
+
+}
