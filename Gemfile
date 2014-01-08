@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby "1.93"
+
 gem 'backbone-support'
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'ejs'
@@ -22,5 +24,3 @@ group :development do
 end
 
 gem 'rails_12factor', group: :production
-
-ruby '2.0.0'
