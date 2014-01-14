@@ -1,0 +1,25 @@
+<div class="listOfLists" id="list<%= current_list.id %>">
+  <div id="listButtonHolder">
+    <div class="createCard">
+      <button
+        class="ink-button red" id="addCard<%=current_list.id%>"> +
+      </button>
+    </div>
+    <div class="deleteAList">
+      <button
+        class="ink-button blue" id="<%=current_list.id%>"> X
+      </button>
+    </div>
+  </div>
+	<div class="list-title">
+  	<%= current_list.listtitle %>
+	</div>
+		<div class="listContent push-center ui-droppable" id="list<%=current_list.id%>Content">
+			<% var cards = current_list.attributes.cards; %>
+			<%if (cards.length > 0){ %>
+				<% for (var j = 0; j < current_list.attributes.cards.length; j++){%>
+					<%= JST['cards/show']({card: cards[j]}) %>
+				<%} %>
+			<%} %>
+		</div>
+	</div>

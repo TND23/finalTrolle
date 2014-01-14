@@ -1,0 +1,27 @@
+<div id="board_content">
+  <div class="list">
+  </div>
+</div>
+
+<script>
+var current_user = <%= { :id => current_user.id,
+                         :user_name => current_user.username,
+                         :boards => current_user.boards
+                        }.to_json.html_safe
+                    %>;
+var router_option = 2;
+var user_boards = <%= current_user.boards.to_json.html_safe %>;
+
+$(document).ready(function() {
+  TrolleApp.initialize(current_user, router_option, user_boards);
+});
+</script>
+
+<footer id="boardIndexFooter">
+  <nav class="ink-navigation hide-small">
+    <ul class="menu horizontal flat rounded shadowed grey" id="menu">
+      <li><a id="home" href="/">Home</a></li>
+      <li><a id="settings" href="#">Settings</a></li>
+    </ul>
+  </nav>
+</footer>

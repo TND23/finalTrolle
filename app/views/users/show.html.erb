@@ -1,0 +1,47 @@
+
+<footer>
+  <div class="ink-grid">
+      <nav class="ink-navigation push-left medium-100 small-100 small-100">
+          <ul class="menu horizontal">
+              <li class="active"><a href="<%= current_user.id %>/boards">Boards</a></li>
+              <li><a href="<%= current_user.id %>/settings">Settings</a></li>
+              <li><a href="#">Bin</a></li>
+          </ul>
+      </nav>
+      <p class="push-right"><%= button_to "Logout", session_url, :method => :delete %>
+</p>
+  </div>
+</footer>
+
+
+
+<div id="content">
+
+<script type="application/json" id="user_boots">
+  { "current_user": <%= {
+                        :id => current_user.id,
+                        :username => current_user.username,
+                      }.to_json.html_safe %>
+  }
+</script>
+
+<script type="application/json" id="user_board_boots">
+  { "user_boards": <%= current_user.boards.to_json.html_safe %> }
+</script>
+
+
+
+<script>
+var current_user = <%= { :id => current_user.id,
+                         :user_name => current_user.username,
+                         :boards => current_user.boards
+                        }.to_json.html_safe
+                    %>;
+var router_option = 1;
+var user_boards = <%= current_user.boards.to_json.html_safe %>;
+
+$(document).ready(function(){
+  TrolleApp.initialize(current_user, 1, user_boards);
+  });
+</script>
+</div>

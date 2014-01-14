@@ -1,0 +1,173 @@
+<section id="trolleWelcome">
+<div class="ink-grid">
+  <header>
+    <h1> .
+      <div id="imageLogo">
+      </div>
+      <div id="welcomeLogo">
+        Welcome To Trolle 
+      </div>
+
+    </h1>
+    <nav class="ink-navigation vspace">
+      <ul class="menu horizontal flat rounded shadowed grey" id="home_menu">
+        <div class="large-10" ></div>
+        <li id="tour" class="large-20"><a href="#tour"><i class="icon-dashboard"></i>Website Tour</a></li>
+        <li id="about" class="large-20"><a href="#about"> <i class="icon-user"></i> About the Author</a></li>
+        <li id="contact" class="large-20"><a href="#contact"><i class="icon-envelope"></i>Contact the Author</a></li>
+        <li id="siteInfo" class="large-20"><a href="#aboutSite"><i class="icon-info-sign"></i> About the Site</a></li>
+      </ul>
+      <div class="large-10" ></div>
+    </nav>
+
+  </header>
+
+</div>
+<div id="aboutMe">
+
+  <p>Thomas Nast is a freelance (unemployed) web developer with all the coolest skills. Check out his 
+    <li> <a href =http://www.linkedin.com/pub/thomas-nast/6a/747/349> LinkedIn Profile </a> </li>
+    <li> <a href = https://github.com/TND23> Github Profile </a> </li>
+ </p>
+</div>
+
+</div>
+<div id="contactMe">
+
+  <p> Contacting Thomas is easiest through:
+    <li> <a href =http://www.linkedin.com/pub/thomas-nast/6a/747/349> LinkedIn Profile </a> </li>
+     or by emailing him at: <li>tommyn (at) isomedia (dot) com </li>
+ </p>
+</div>
+
+<div id="aboutWebsite">
+
+  <p> Trolle App is a site designed in the image of  <a href=http://www.trello.com>trello</a>. 
+    It was generated using ruby on rails, backbone, css, javascript, and maintained at heroku
+    over a postgres database. 
+ </p>
+</div>
+
+</section>
+
+<section id="slideShowDiv">
+
+  <div id="slideshow">
+   <div id="organizeImage">
+   </div>
+   <div id="makeLists">
+   </div>
+   <div>
+     Create lists.
+   </div>
+</div>
+
+</section>
+
+<section id="joinUs">
+    <h4 style="font-size: -webkit-xxx-large;">Sign in</h4>
+    <div class="column-group half-gutters">
+      <form id="signInDiv" class="ink-form large-50 medium-50 small-50" action="<%= session_url %>" method="post">
+        <input
+           name="authenticity_token"
+           type="hidden"
+           value="<%= form_authenticity_token %>">
+
+        <label for="user_username">Username</label>
+        <input
+           id="user_username"
+           name="user[username]"
+           type="text">
+        <br>
+
+        <label for="user_password">Password</label>
+        <input
+           id="user_password"
+           name="user[password]"
+           type="password">
+        <br>
+
+        <input type="submit" value="Log in" id="logInButton"         class="ink-button blue large-25 push-center">
+      </form>
+    </div>
+</section>
+
+<section id="createAccountSection">
+
+
+  <div class="column-group half-gutters">
+    <div>
+     <h4 style="font-size: -webkit-xxx-large;">New User? Create an Account     here:</h4></div>
+    <form
+    id="createAccountDiv"
+    class="ink-form large-50 medium-50 small-50"
+    action="<%= users_url %>"
+    method="post">
+      <input
+         name="authenticity_token"
+         type="hidden"
+         value="<%= form_authenticity_token %>">
+
+      <label for="user_username">Username</label>
+      <input
+         id="user_username"
+         name="user[username]"
+         placeholder="JohnDoe123"
+         type="text">
+      <br>
+
+      <label for="user_password">Password</label>
+      <input
+         id="user_password"
+         name="user[password]"
+         placeholder="aTerriblePassword"
+         type="password">
+      <br>
+
+      <input type="submit"
+        value="Create account"
+        id="signUpButton"
+        class="ink-button blue large-25 push-center">
+    </form>
+  </div>
+</section>
+
+<section id="raveReviews">
+  <h3> Testimonials </h3>
+
+  <blockquote>
+    <p id="testimonial1"> "Thanks to TrolleApp I no longer have to fear being hastled by badgers on my morning commute to work."
+    </p>
+    <p><cite>David John</cite></p>
+</blockquote>
+
+  <blockquote>
+    <p id="testimonial2"> "After using TrolleApp my productivity shot through the roof! Now I have to buy a new roof - thanks a lot, TrolleApp." </p>
+    </p>
+    <p><cite>Jen Mackee</cite></p>
+  </blockquote>
+
+<footer id="mainFooter"></footer>
+<script>
+
+// slideshow courtesy of http://css-tricks.com/snippets/jquery/simple-auto-playing-slideshow/
+$("#slideshow > div:gt(0)").hide();
+
+setInterval(function() { 
+  $('#slideshow > div:first').fadeOut(2000).next().fadeIn(2000).end().appendTo('#slideshow');
+},  5000);
+
+$('#about').click(function() {
+    $("#aboutMe").toggle("drop");
+});
+
+$('#siteInfo').click(function() {
+    $("#aboutWebsite").toggle("drop");
+});
+
+
+$('#contact').click(function() {
+    $("#contactMe").toggle("drop");
+});
+
+</script>

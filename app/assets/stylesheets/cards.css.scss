@@ -1,0 +1,42 @@
+// Place all the styles related to the cards controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.cardContainer{
+
+	height: 20%;
+		width: 243px;
+	background-color: #C5C0C0;
+	color: black;
+	border-radius: 13px;
+	cursor: pointer;
+}
+
+.cardTitle{
+
+	height: 25%;
+	width: 243px;
+	background-color: #FFFFFF;
+	color: black;
+}
+
+.cardBody{
+	height: 65%;
+	width: 243px;
+	background-color: green;
+	color: black;
+}
+
+.card-input{
+	height: 70px;
+	width: 100%;
+	font-size: 65%;
+}
+
+.deleteACard{
+  height: 80%;
+  width: 10%;
+  float: left;
+  border-radius: 12px;
+  font-size: 20px;
+}

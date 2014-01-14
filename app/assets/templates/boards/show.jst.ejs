@@ -1,0 +1,45 @@
+<% var url = "/boards/" + board.id + "/lists" %>
+<div id="visible_board">
+
+	<nav class="ink-navigation hide-small">
+	  <ul class="menu horizontal flat rounded shadowed grey" id="home_menu">
+	    <form class="ink-form" id="listMenu" action=<%=url%> method="post">
+	    <li><a id="listForm" href="#">Create New List</a></li>
+	    </form>
+	  </ul>
+	</nav>
+	<% TrolleApp.b = board %>
+	<div id="boardTitle">
+		<%= board.boardtitle %>
+		<div class="lists">
+			<% var listCollection = collection.models %>
+			<ul id="sortable">
+				<% for (var i = 0; i < listCollection.length; i++){%>
+					<% var current_list = listCollection[i] %>
+	        <div class="listOfLists" id="list<%= current_list.id %>">
+	          <div id="listButtonHolder">
+	            <div class="createCard">
+	              <button
+	                class="ink-button red" id="addCard<%=current_list.id%>"> +
+	              </button>
+	            </div>
+	            <div class="deleteAList">
+	              <button
+	                class="ink-button blue" id="<%=current_list.id%>"> X
+	              </button>
+	            </div>
+
+	          </div>
+						<div class="list-title">
+	          	<%= current_list.listtitle %>
+						</div>
+
+							<div class="listContent push-center ui-droppable" id="list<%=current_list.id%>Content">
+							</div>
+	        	</div>
+		      <%};%>
+				</ul>
+	   </div>
+  </div>
+
+</div>

@@ -1,0 +1,124 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#new_user{
+  width: 500px;
+  height: 500px;
+  background-color: blue;
+}
+
+
+#toSettings:hover{
+  color:blue;
+}
+
+
+#toBin:hover{
+  color:blue;
+}
+
+#toBoard:hover{
+  color:blue;
+}
+
+.slide-out-holder{
+	height: 1200px;
+}
+
+.button-container{
+	height: 30%;
+	margin: 20px;
+}
+
+.user-button{
+  font-family: -webkit-body;
+  font-size: 20px;
+	height: 90%;
+	width: 100%;
+	line-height: 100px;
+}
+
+.sidebar{
+	height: 1200px;
+	background-color: rgb(173, 194, 207);
+}
+
+#user-portrait{
+	height: 500px;
+	background: url('default_portrait.png');
+	 	background-repeat: no-repeat;
+
+	border-radius: 40px;
+}
+#user-reminders{
+}
+
+#board-preview{
+	display: none;
+	height: 100%;
+	width: 100%;
+	background-color: purple;
+	z-index: 3;
+}
+
+#settings-preview{
+	display: none;
+	height: 100%;
+	width: 100%;
+	background-color: orange;
+	z-index: 3;
+}
+
+#bin-preview{
+	display: none;
+	height: 100%;
+	width: 100%;
+	background-color: green;
+	z-index: 3;
+}
+
+#menuFooter{
+  width: 600px;
+  height: 100px;
+  position: absolute;
+
+  top: 380px;
+  border: .5em solid;
+  background-color: #AFAFAF;
+}
+
+.content{
+	margin: 10px;
+	height: 1200px;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #bddbfa), color-stop(1, #80b5ea) );
+	background-color:#bddbfa;
+}
+
+footer {
+    background: rgba(10,10,10,0.95);
+    border: 0;
+    line-height: 80px;
+    margin-top: 0 !important;
+}
+footer * {
+    line-height: inherit;
+}
+footer p {
+    margin-top: 0;
+}
+footer .ink-navigation ul.menu.horizontal li {
+    margin-right: 2em;
+    line-height: inherit;
+}
+footer .ink-navigation ul.menu.horizontal li a {
+    padding: 0;
+    color: white;
+    text-decoration: underline;
+}
+footer p {
+    color: white;
+}
+footer .ink-navigation ul.menu.horizontal li a:hover {
+    color: #c91111;
+}

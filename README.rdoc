@@ -1,0 +1,13 @@
+This project is to demonstrate my learning of Rails, Ruby,
+Backbone, Node, JavaScript, JQuery, etc. etc. 
+It will be quite similar to the website "Trello", except it 
+may be more troll-oriented.
+
+Features will include: 
+- User login page
+- User authentication
+- Todo Cards
+- Dynamic Card interface
+- Automated scheduling algorithms
+
+

@@ -1,0 +1,56 @@
+<div class="ink-grid">
+
+	<div align="center" class="large-30 medium-50 small-100 push-left content">
+
+		<div class="column-group button-container">
+				<a class="ink-button blue user-button" id="toBoard" href="<%= current_user.id %>/boards">
+				 Visit Your Boards
+
+				</a>
+
+		</div>
+
+		<div class="column-group button-container">
+				<a class="ink-button blue  user-button" id="toSettings" href="<%= current_user.id %>/settings">
+					Modify Your Settings
+					 <div id="test"> 
+					 <i class="icon-gears fa-5x"></i>
+					 </div>
+				</a>
+		</div>
+
+		<div class="column-group button-container">
+			  <button class="ink-button blue large-25 push-center user-button" id="toBin">
+					Check Out Your Bin
+			  </button>
+		</div>
+
+	</div>
+
+	<div class="slide-out-holder large-30 medium-40">
+
+		<div id="board-preview">
+
+		</div>
+
+		<div id="settings-preview">
+
+		</div>
+
+		<div id="bin-preview">
+
+		</div>
+
+	</div>
+
+		<div class="large-33 sidebar">
+			<div id="user-portrait" class="large-100 medium-100 small-100 push-center">
+			</div>
+			<h2 id="welcome">Logged in as <%= current_user.user_name %></h2>
+
+
+			<div id="user-reminders">
+			</div>
+		</div>
+
+</div>
