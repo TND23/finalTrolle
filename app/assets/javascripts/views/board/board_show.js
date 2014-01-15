@@ -110,7 +110,7 @@ TrolleApp.Views.BoardShow = Backbone.View.extend({
 		var that = this;
 		TrolleApp.deleteListTimer = window.setTimeout(that.showIntel, 1000);
 	},
-//
+
 	makeDraggable: function(){
 		$(".cardContainer").draggable({
 			opacity: 0.7,
