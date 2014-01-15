@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131113041123) do
+ActiveRecord::Schema.define(:version => 20131111002539) do
 
   create_table "boards", :force => true do |t|
     t.string   "boardtitle"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20131113041123) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.string   "session_token"
+    t.integer  "boards_id"
   end
 
   add_index "users", ["session_token"], :name => "index_users_on_session_token", :unique => true
