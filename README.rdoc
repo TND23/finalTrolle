@@ -8,6 +8,3 @@ Features will include:
 - User authentication
 - Todo Cards
 - Dynamic Card interface
-- Automated scheduling algorithms
-
-

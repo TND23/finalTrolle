@@ -44,7 +44,7 @@
 
   <p> Trolle App is a site designed in the image of  <a href=http://www.trello.com>trello</a>. 
     It was generated using ruby on rails, backbone, css, javascript, and maintained at heroku
-    over a postgres database. 
+    over a postgres database. Trolle App was designed and functions best with Google Chrome.
  </p>
 </div>
 
@@ -116,13 +116,15 @@
          type="text">
       <br>
 
-      <label for="user_password">Password</label>
+      <label for="user_password">Password</label>      
+
       <input
          id="user_password"
          name="user[password]"
          placeholder="aTerriblePassword"
          type="password">
-      <br>
+
+       <p id="pass-text">  Your password must be at least six characters long </p>
 
       <input type="submit"
         value="Create account"
@@ -158,15 +160,21 @@ setInterval(function() {
 },  5000);
 
 $('#about').click(function() {
+    $("#aboutWebsite").hide();
+    $("#contactMe").hide();
     $("#aboutMe").toggle("drop");
 });
 
 $('#siteInfo').click(function() {
+    $("#aboutMe").hide();
+    $("#contactMe").hide();
     $("#aboutWebsite").toggle("drop");
 });
 
 
 $('#contact').click(function() {
+    $("#aboutMe").hide();
+    $("#aboutWebsite").hide();
     $("#contactMe").toggle("drop");
 });
 

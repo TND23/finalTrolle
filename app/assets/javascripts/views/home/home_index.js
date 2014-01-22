@@ -10,14 +10,12 @@ TrolleApp.Views.HomeIndex = Backbone.View.extend({
   template: JST['home/index'],
 
   events: {
-    'click #toBoard' : 'goToBoards',
+   		 'click #toBoard' : 'goToBoards',
 		'mouseenter #toBoard' : 'startBoardDisplayTimer',
-		'mouseleave #toBoard' : 'hideBoardPreview',
-
 		'mouseenter #toSettings' : 'startSettingsDisplayTimer',
-		'mouseleave #toSettings' : 'hideSettingsPreview',
-
 		'mouseenter #toBin' : 'startBinDisplayTimer',
+		'mouseleave #toBoard' : 'hideBoardPreview',
+		'mouseleave #toSettings' : 'hideSettingsPreview',
 		'mouseleave #toBin' : 'hideBinPreview',
   },
 
@@ -31,49 +29,52 @@ TrolleApp.Views.HomeIndex = Backbone.View.extend({
 
 	startBoardDisplayTimer: function(){
 		var that = this;
-		this.timeout1 =window.setTimeout(that.displayBoardPreview, 750);
+		this.timeout1 =window.setTimeout(that.displayBoardPreview, 200);
 	},
 
 	displayBoardPreview: function(){
-		$('#board-preview').show("clip", 500);
+		$('#settings-preview').hide();
+		$('#bin-preview').hide();
+		$('#board-preview').show("clip", 350);
 	},
 
 	hideBoardPreview: function(){
 		var that = this;
 		window.clearTimeout(this.timeout1);
-		$('#board-preview').hide("clip", 500);
 	},
 
 
 	startSettingsDisplayTimer: function(){
 		var that = this;
-		this.timeout2 =window.setTimeout(that.displaySettingsPreview, 750);
+		this.timeout2 =window.setTimeout(that.displaySettingsPreview, 200);
 	},
 
 	displaySettingsPreview: function(){
-		$('#settings-preview').show("clip", 500);
+		$('#board-preview').hide();
+		$('#bin-preview').hide();
+		$('#settings-preview').show("clip", 350);
 	},
 
 	hideSettingsPreview: function(){
 		var that = this;
 		window.clearTimeout(this.timeout2);
-		$('#settings-preview').hide("clip", 500);
 	},
 
 
 	startBinDisplayTimer: function(){
 		var that = this;
-		this.timeout3 =window.setTimeout(that.displayBinPreview, 750);
+		this.timeout3 =window.setTimeout(that.displayBinPreview, 200);
 	},
 
 	displayBinPreview: function(){
-		$('#bin-preview').show("clip", 500);
+		$('#board-preview').hide();
+		$('#settings-preview').hide();
+		$('#bin-preview').show("clip", 350);
 	},
 
 	hideBinPreview: function(){
 		var that = this;
 		window.clearTimeout(this.timeout3);
-		$('#bin-preview').hide("clip", 500);
 	},
 
 
