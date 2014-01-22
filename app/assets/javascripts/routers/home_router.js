@@ -6,11 +6,6 @@ TrolleApp.Routers.HomeRouter = Support.SwappingRouter.extend({
     this.user_boards = options[1];
     TrolleApp.visiting_user = this.visiting_user;
     TrolleApp.user_boards = this.user_boards;
-    TrolleApp.metaCollection = [];
-    for (var i = 0; i < TrolleApp.user_boards.length; i++){
-      TrolleApp.metaCollection.push(TrolleApp.user_boards[i].id);
-    }
-
   },
 
   routes: {

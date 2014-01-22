@@ -8,11 +8,9 @@
         <ul class="submenu">
           <% for(var i = 0; i < boards.length; i++){ %>
             <li class="indivBoard">
-            <% console.log(boards) %>
             	<a href="#<%=boards[i].attributes.id%>/lists" id="<%=boards[i].attributes.id %>">
-								<%= boards[i].attributes.boardtitle %>
-
-							</a>
+			<%= boards[i].attributes.boardtitle %>
+		</a>
             </li>
           <% } %>
         </ul>
@@ -22,3 +20,15 @@
     </ul>
   </nav>
 </div>
+<div id="v-buffer-space">
+</div>
+
+<div id="h-buffer-space">
+</div>
+
+
+   <% for(var i = 0; i < boards.length; i++){ %>
+                   <a id="#<%=boards[i].attributes.id%>DF" class="DF large-10" href="#<%=boards[i].attributes.id%>/lists">
+                <%= boards[i].attributes.boardtitle %>
+                </a>
+          <% } %>

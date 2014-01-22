@@ -8,38 +8,33 @@
 	    </form>
 	  </ul>
 	</nav>
-	<% TrolleApp.b = board %>
+
 	<div id="boardTitle">
 		<%= board.boardtitle %>
 		<div class="lists">
-			<% var listCollection = collection.models %>
+			<% TrolleApp.listCollection = collection.models %>
 			<ul id="sortable">
-				<% for (var i = 0; i < listCollection.length; i++){%>
-					<% var current_list = listCollection[i] %>
-	        <div class="listOfLists" id="list<%= current_list.id %>">
-	          <div id="listButtonHolder">
-	            <div class="createCard">
-	              <button
-	                class="ink-button red" id="addCard<%=current_list.id%>"> +
-	              </button>
-	            </div>
-	            <div class="deleteAList">
-	              <button
-	                class="ink-button blue" id="<%=current_list.id%>"> X
-	              </button>
-	            </div>
-
-	          </div>
-						<div class="list-title">
-	          	<%= current_list.listtitle %>
-						</div>
-
-							<div class="listContent push-center ui-droppable" id="list<%=current_list.id%>Content">
-							</div>
-	        	</div>
-		      <%};%>
-				</ul>
-	   </div>
+				<% for (var i = 0; i < TrolleApp.listCollection.length; i++){%>
+					<% var current_list = TrolleApp.listCollection[i] %>
+						<%= JST['lists/show']({current_list: current_list}) %>
+		      		<%};%>
+			</ul>
+	   	</div>
   </div>
+ <footer id="mynag">
+
+  <div class="ink-grid">
+
+      <nav class="ink-navigation  medium-100 small-100 small-100">
+          <ul class="menu horizontal">
+              <li class="active"><a href="<%= current_user.id %>/boards">Boards</a></li>
+              <li><a href="<%= current_user.id %>/settings">Settings</a></li>
+              <li><a href="#">Bin</a></li>
+          </ul>
+      </nav>
+  </div>
+</footer>
+
 
 </div>
+ 

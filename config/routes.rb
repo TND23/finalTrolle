@@ -1,8 +1,7 @@
  TrolleApp::Application.routes.draw do
   resources :users, :only => [:show] do
     resources :boards, :only => [:create, :show, :index]
-    resources :settings
-
+    resources :settings, :only => [:index]
   end
 
 
@@ -13,7 +12,7 @@
   end
 
   resources :lists, :only => [:edit, :update] 
-  resources :cards, :except => [:new]
+  resources :cards
 
   resource :session, :only => [:create, :destroy, :new]
 

@@ -6,7 +6,7 @@ window.TrolleApp = {
   initialize: function(currentUser, routerOption, currentBoards) {
     TrolleApp.csrfToken = $("meta[name='csrf-token']").attr('content');
     TrolleApp.currentUser = currentUser;
-
+   
 	TrolleApp.Collections.Boards = new TrolleApp.Collections.Boards({visiting_user: TrolleApp.currentUser});
       TrolleApp.Collections.Cards = new TrolleApp.Collections.Cards();
       // loop thru & find lists
@@ -43,6 +43,7 @@ window.TrolleApp = {
         if (routerOption == 2){
 					console.log('2')
           TrolleApp.Collections.Cards.fetch();
+          
           TrolleApp.boardRouter = new TrolleApp.Routers.BoardRouter();
         }
         Backbone.history.start();

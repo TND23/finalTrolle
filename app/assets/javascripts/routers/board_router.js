@@ -21,12 +21,11 @@ TrolleApp.Routers.BoardRouter = Support.SwappingRouter.extend({
     var that = this;
     this.id = id;
 		this.user_id = current_user.id;
-
 		// fetch list collection when visiting new board
 		// find the corresponding board and render it
 		TrolleApp.Collections.currentBoardLists = new TrolleApp.Collections.Lists({board_id: id});
     //change this so that the list is not created every time we render the board.
-    // this way we can have a meaningful default attribute of a list
+    // this way we can have a meaningful default attribute of a list and it is likely this will fix the refresh problem
 		TrolleApp.Collections.currentBoardLists.fetch();
     
     $.ajax({
@@ -45,6 +44,7 @@ TrolleApp.Routers.BoardRouter = Support.SwappingRouter.extend({
           var current_board = user_boards[i];
           $("#menu").remove();
           TrolleApp.boardDisplay = new TrolleApp.Views.BoardShow({collection: TrolleApp.Collections.currentBoardLists, current_board: current_board, data: data});
+          
 	        $('#board_content').append(TrolleApp.boardDisplay.render().el);
         }
       }

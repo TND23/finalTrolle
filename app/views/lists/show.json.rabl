@@ -1,5 +1,5 @@
 object @list
 attributes :listtitle, :id, :board_id
 child(:cards) do
-  attribute :cardtitle
+	attributes :cardtitle, :cardbody, :id
 end

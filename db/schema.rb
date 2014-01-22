@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20131111002539) do
     t.datetime "updated_at",      :null => false
     t.string   "session_token"
     t.integer  "boards_id"
+    t.string   "settings"
   end
 
   add_index "users", ["session_token"], :name => "index_users_on_session_token", :unique => true

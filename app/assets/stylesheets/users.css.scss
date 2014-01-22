@@ -13,9 +13,25 @@
   color:blue;
 }
 
+.ink-grid{
+	
+	max-width: 95%;
+	margin: 0 auto;
+	padding: 0;
+}
+
 
 #toBin:hover{
   color:blue;
+}
+
+body, html{
+	height: 100%;
+}
+
+#welcome{
+	text-align: center;
+	text-overflow: ellipsis;
 }
 
 #toBoard:hover{
@@ -23,7 +39,7 @@
 }
 
 .slide-out-holder{
-	height: 1200px;
+	height: 700px;
 }
 
 .button-container{
@@ -40,16 +56,23 @@
 }
 
 .sidebar{
-	height: 1200px;
+	height:  700px;
 	background-color: rgb(173, 194, 207);
 }
 
-#user-portrait{
-	height: 500px;
-	background: url('default_portrait.png');
-	 	background-repeat: no-repeat;
+.ink-grid{
+	height:100%;
+}
 
-	border-radius: 40px;
+html{
+	height:100%;
+}
+
+#user-portrait{
+	height: 300px;
+	background: url('default_portrait.png');
+	background-repeat: no-repeat;
+
 }
 #user-reminders{
 }
@@ -88,11 +111,17 @@
   background-color: #AFAFAF;
 }
 
-.content{
-	margin: 10px;
-	height: 1200px;
+.left-hand-container{
+	height: 700px;
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #bddbfa), color-stop(1, #80b5ea) );
 	background-color:#bddbfa;
+
+}
+
+#content{
+	height:700px;
+	margin-top: 0;
+
 }
 
 footer {
@@ -106,6 +135,7 @@ footer * {
 }
 footer p {
     margin-top: 0;
+    color: white;
 }
 footer .ink-navigation ul.menu.horizontal li {
     margin-right: 2em;
@@ -116,9 +146,7 @@ footer .ink-navigation ul.menu.horizontal li a {
     color: white;
     text-decoration: underline;
 }
-footer p {
-    color: white;
-}
+
 footer .ink-navigation ul.menu.horizontal li a:hover {
     color: #c91111;
 }

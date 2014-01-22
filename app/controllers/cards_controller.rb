@@ -29,7 +29,7 @@ class CardsController < ApplicationController
     @card = Card.find(params[:id])
     @card.update_attributes :cardbody => params[:cardbody]
     @card.update_attributes :cardtitle => params[:cardtitle]
-     @card.update_attributes :list_id => params[:list_id]
+    @card.update_attributes :list_id => params[:list_id]
     render :json => @card
   end
 
