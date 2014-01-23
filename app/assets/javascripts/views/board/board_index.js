@@ -49,7 +49,7 @@ TrolleApp.Views.BoardIndex = Backbone.View.extend({
 				{
 					success: function(){
 						that.collection.add(newBoard);
-                                        user_boards.push(newBoard);
+                                       user_boards.push(newBoard);
 						that.collection.fetch();
 					},
 					error: function(){alert("something has gone wrong in saving");}

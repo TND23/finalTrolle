@@ -8,6 +8,7 @@ window.TrolleApp = {
     TrolleApp.currentUser = currentUser;
     TrolleApp.Collections.Boards = new TrolleApp.Collections.Boards({visiting_user: TrolleApp.currentUser});
     TrolleApp.Collections.Cards = new TrolleApp.Collections.Cards();
+    TrolleApp.Collections.currentBoardLists = new TrolleApp.Collections.Lists({board_id: "1"});
 
     //get the router or assign it
     var routerOption = routerOption || 1;

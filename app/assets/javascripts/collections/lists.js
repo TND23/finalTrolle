@@ -1,6 +1,6 @@
 TrolleApp.Collections.Lists = Backbone.Collection.extend({
-	initialize: function(board_id){
-		this.board_id = board_id.board_id;
+	initialize: function(options){
+		this.board_id = options.board_id;
 	},
   // parse: function(response){
   // 	console.log(response);

@@ -3,13 +3,13 @@ TrolleApp.Views.BoardShow = Backbone.View.extend({
   initialize: function(options){
 	this.collection = options.collection;
 	this.current_board = options.current_board;
+	TrolleApp.cBoard = this.current_board;
 	this.data = options.data;
 	TrolleApp.boardLists = this.collection;
 	},
 
   template: JST['boards/show'],
   events: {
-	
 	"click .createCard" : "createCard",
 	"click .deleteACard" : "destroyCard",
 	"click #listForm" : "showListInfo",
@@ -18,6 +18,7 @@ TrolleApp.Views.BoardShow = Backbone.View.extend({
 	"click .card-input" : "checkForMouse",
 	"click #list_listtitle" : "checkEntry",
 	"sortList" : "sortList"
+
   },
 
   //all my methods are too large...
@@ -73,7 +74,8 @@ TrolleApp.Views.BoardShow = Backbone.View.extend({
 	this.board_id = this.data.id;
 	
 	this.newList = new TrolleApp.Models.List({board_id: that.board_id, listtitle: that.newListTitle});
-	// on success we callback to add this to the collection so that the newList has an ID since its been saved to the server
+	// on success we callback to add this to the collection so that the newList 
+	//has an ID since its been saved to the server
 	this.newList.save(that.newList.attributes, {
 		success: function(model, response, xhr){
 												 TrolleApp.boardLists.add(that.newList);
@@ -120,7 +122,7 @@ TrolleApp.Views.BoardShow = Backbone.View.extend({
 		var that = this;
 	  $(".listContent").droppable({
 			accept: $(".cardContainer"),
-			
+
 			drop: function(event, draggable){
 				var list_id = parseInt(event.target.id.match(/\d+/));
 				var card_id = draggable.draggable[0].id;
@@ -128,12 +130,12 @@ TrolleApp.Views.BoardShow = Backbone.View.extend({
 				var target_list = TrolleApp.boardLists.get(list_id);
 				var card = TrolleApp.Collections.Cards.get(card_no);
 				var cardTemplate = JST['cards/show']({card: card});
-
 				card.attributes.list_id = list_id;
 				card.list_id.list_id = list_id;
 				card.save(card.attributes, 
 					{
 						success: function(){
+							$("#cardHolder"+card_no).hide();
 							$('#list'+target_list.id+'Content').append(cardTemplate);
 							target_list.attributes.cards.push(card);
 					},
@@ -141,8 +143,6 @@ TrolleApp.Views.BoardShow = Backbone.View.extend({
 							console.log('error');
 						}
 			});
-
-				
 			}
 	  	});
 
@@ -199,11 +199,10 @@ TrolleApp.Views.BoardShow = Backbone.View.extend({
 
 	updateCardBody: function(options){
 		var card = options.card;
-		var card_body = options.card_body;
 		var card_container = $("#area" + card.id);
-		TrolleApp.card = card_container;
-		card.set({cardbody: card_body});
 		card_container.remove();
+		var safe_card_content = card.escape("cardbody");
+		$("#cardBody"+card.id).html(safe_card_content);
 
 		card.save(card.attributes, {error: function(model, response){console.log(model); console.log(response);}})
 	},
@@ -250,4 +249,3 @@ TrolleApp.Views.BoardShow = Backbone.View.extend({
     return this;
   },
 });
-

@@ -32,7 +32,6 @@ TrolleApp.Routers.BoardRouter = Support.SwappingRouter.extend({
       url: "/users/"+ this.user_id +"/boards/"+id+".json",
       type:"GET",
       success: function(data){
-        console.log(data);
         that.displayResult(data);
 			}
     });
@@ -40,12 +39,12 @@ TrolleApp.Routers.BoardRouter = Support.SwappingRouter.extend({
 
   displayResult: function(data){
     var that = this;
-    console.log(that);
+        TrolleApp.Collections.currentBoardLists.reset(data.lists);
       for (var i = 0; i < TrolleApp.Collections.Boards.length; i++){
         if (TrolleApp.Collections.Boards.models[i].id == that.id){
           var current_board = TrolleApp.Collections.Boards.models[i];
-          $("#menu").remove();
           $("#board_content").empty();
+          $("#menu").empty();
           TrolleApp.boardDisplay = new TrolleApp.Views.BoardShow({collection: TrolleApp.Collections.currentBoardLists, current_board: current_board, data: data});
 	    $('#board_content').append(TrolleApp.boardDisplay.render().el);
         }
