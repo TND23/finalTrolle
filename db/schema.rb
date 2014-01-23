@@ -11,16 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131111002539) do
+ActiveRecord::Schema.define(:version => 20140123213144) do
 
   create_table "boards", :force => true do |t|
     t.string   "boardtitle"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "user_id"
+    t.string   "color"
   end
-
-  add_index "boards", ["boardtitle"], :name => "index_boards_on_boardtitle", :unique => true
 
   create_table "cards", :force => true do |t|
     t.string   "cardtitle"
@@ -47,8 +46,6 @@ ActiveRecord::Schema.define(:version => 20131111002539) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.string   "session_token"
-    t.integer  "boards_id"
-    t.string   "settings"
   end
 
   add_index "users", ["session_token"], :name => "index_users_on_session_token", :unique => true

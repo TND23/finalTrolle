@@ -57,11 +57,14 @@ TrolleApp.Views.BoardShow = Backbone.View.extend({
 					var cardTemplate = JST['cards/show']({card: newCard});
 					current_list.attributes.cards.push(newCard);
 					$('#list'+current_list.id+'Content').append(cardTemplate);
+					$(".inspectACard").attr('title', 'View more information regarding this card');
+					$(".deleteACard").attr('title', 'Send this card to the bin');
+					that.makeDraggable();
+					that.makeDroppable();
 				},
 				error: function(model, response){console.log('shoot'); console.log(response);},
 			});
-		this.makeDraggable();
-		this.makeDroppable();
+
 	},
 
   createList: function(event, x){
@@ -80,6 +83,8 @@ TrolleApp.Views.BoardShow = Backbone.View.extend({
 		success: function(model, response, xhr){
 												 TrolleApp.boardLists.add(that.newList);
 												 that.renderNewList(that.newList.id);
+												$(".createCard").attr('title', 'Add a card');
+												$(".deleteAList").attr('title', 'Destroy this list');
 											 },
 		error: function(){console.log('error')}
 	});
@@ -113,7 +118,9 @@ TrolleApp.Views.BoardShow = Backbone.View.extend({
 			opacity: 0.7,
 			revert: "invalid",
 			zIndex: 1,
-			helper: "clone"
+			helper: "clone",
+			cursorAt: {"top" : 5, "left" : 5},
+
 		});
 	},
 
@@ -135,9 +142,11 @@ TrolleApp.Views.BoardShow = Backbone.View.extend({
 				card.save(card.attributes, 
 					{
 						success: function(){
-							$("#cardHolder"+card_no).hide();
-							$('#list'+target_list.id+'Content').append(cardTemplate);
+
+							$("#cardHolder"+card_no).appendTo($('#list'+target_list.id+'Content'));
 							target_list.attributes.cards.push(card);
+							that.makeDraggable();
+							that.makeDroppable();
 					},
 						error: function(){
 							console.log('error');
@@ -203,7 +212,7 @@ TrolleApp.Views.BoardShow = Backbone.View.extend({
 		card_container.remove();
 		var safe_card_content = card.escape("cardbody");
 		$("#cardBody"+card.id).html(safe_card_content);
-
+		that.makeDraggable();
 		card.save(card.attributes, {error: function(model, response){console.log(model); console.log(response);}})
 	},
 
@@ -231,6 +240,7 @@ TrolleApp.Views.BoardShow = Backbone.View.extend({
     var id = this.current_board.id;
     $(this.el).html(this.template({collection: this.collection, board: this.current_board, data: this.data}));
 	this.renderCards();
+	console.log('yes');
 
     $.ajax({
       url: "/boards/"+id+"/lists.json",

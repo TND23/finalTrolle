@@ -8,7 +8,6 @@ class UsersController < ApplicationController
       self.current_user = @user
       redirect_to user_url(@user)
     else
-      redirect_to new_user_url
     end
   end
 
