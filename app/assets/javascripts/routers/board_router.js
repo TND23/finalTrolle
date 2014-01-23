@@ -32,6 +32,7 @@ TrolleApp.Routers.BoardRouter = Support.SwappingRouter.extend({
       url: "/users/"+ this.user_id +"/boards/"+id+".json",
       type:"GET",
       success: function(data){
+        console.log(data);
         that.displayResult(data);
 			}
     });
@@ -39,9 +40,10 @@ TrolleApp.Routers.BoardRouter = Support.SwappingRouter.extend({
 
   displayResult: function(data){
     var that = this;
-      for (var i = 0; i < user_boards.length; i++){
-        if (user_boards[i].id == that.id){
-          var current_board = user_boards[i];
+    console.log(that);
+      for (var i = 0; i < TrolleApp.Collections.Boards.length; i++){
+        if (TrolleApp.Collections.Boards.models[i].id == that.id){
+          var current_board = TrolleApp.Collections.Boards.models[i];
           $("#menu").remove();
           $("#board_content").empty();
           TrolleApp.boardDisplay = new TrolleApp.Views.BoardShow({collection: TrolleApp.Collections.currentBoardLists, current_board: current_board, data: data});

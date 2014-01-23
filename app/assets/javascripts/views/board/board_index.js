@@ -43,14 +43,14 @@ TrolleApp.Views.BoardIndex = Backbone.View.extend({
     else{
 
       var newBoard = new TrolleApp.Models.Board({boardtitle: title, user_id: id}, {collection: that.collection});
-
+      TrolleApp.newBoard = newBoard;
 			//listenTo allows dynamic rendering
       newBoard.save(newBoard.attributes,
 				{
 					success: function(){
 						that.collection.add(newBoard);
+                                        user_boards.push(newBoard);
 						that.collection.fetch();
-
 					},
 					error: function(){alert("something has gone wrong in saving");}
 				});
