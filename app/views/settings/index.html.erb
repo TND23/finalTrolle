@@ -1,0 +1,66 @@
+<footer>
+  <nav class="ink-navigation push-left large-100 medium-100 small-100">
+        <ul class="menu horizontal">
+            <li><a href="/">Home</a></li>
+
+        </ul>
+    </nav>
+    <p class="push-right"><%= button_to "Logout", session_url, :method => :delete %></p>
+</footer>
+  
+<div class="ink-grid">
+
+    <div class="listOfLists large-25 medium -50 small-50" id="sampleList">
+      <div id="listButtonHolder">
+        <div class="createCard">
+          <button
+            class="ink-button red" id="addCardsampleList"> +
+          </button>
+        </div>
+        <div class="deleteAList">
+          <button
+            class="ink-button blue" id="sampleListBtn"> X
+          </button>
+        </div>
+
+      </div>
+      <div class="list-title">
+        <%= 'Sample' %>
+      </div>
+
+        <div class="listContent push-center ui-droppable" id="sampleListContent">
+
+          <div id="sampleCardHolder" class="cardContainer push-center ui-draggable" >
+            <div class="cardTitle push-center" id="sampleCardHolderTitle"> Sample Card
+                <button class="deleteACard ink-button blue push-left" id="deleteSampleCard">X  </button>
+                <button class="inspectACard ink-button red push-right" id="inspectSampleCard">  
+                  <i class="icon-search"></i> 
+                </button>
+            </div>
+            <div class="cardBody push-center" id="sampleCardBody">
+            </div>
+          </div>
+        </div>
+    </div>
+
+  <script>
+    $('#colorpickerHolder').ColorPicker({flat: true});
+
+    $(".colorpicker_new_color").ColorPicker({
+  onChange: function(hsb, hex, rgb){
+    $("#sampleList").css("background-color", "#" + hex)
+  }
+});
+  </script>
+
+  <div class="large-25 medium-50 small-50">
+      <p id="colorpickerHolder"> </p>     
+  </div>
+</div>
+
+
+<script>
+
+
+
+</script>

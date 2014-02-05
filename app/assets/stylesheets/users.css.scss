@@ -1,0 +1,146 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#new_user{
+  width: 500px;
+  height: 500px;
+  background-color: blue;
+}
+
+
+#toSettings:hover{
+  color:blue;
+}
+
+.ink-grid{
+	max-width: 95%;
+	margin: 0 auto;
+	padding: 0;
+}
+
+
+#toBin:hover{
+  color:blue;
+}
+
+body, html{
+	height: 100%;
+}
+
+#welcome{
+	text-align: center;
+	text-overflow: ellipsis;
+}
+
+#toBoard:hover{
+  color:blue;
+}
+
+.slide-out-holder{
+	height: 700px;
+}
+
+.button-container{
+	height: 30%;
+	margin: 20px;
+}
+
+.user-button{
+  font-family: -webkit-body;
+  font-size: 20px;
+	height: 90%;
+	width: 100%;
+	line-height: 100px;
+}
+
+.sidebar{
+	height:  700px;
+	background-color: rgb(173, 194, 207);
+}
+
+.ink-grid{
+	height:100%;
+}
+
+html{
+	height:100%;
+}
+
+#user-portrait{
+	height: 300px;
+	width: 100%;
+	background: url('default_portrait.png');
+	background-repeat: no-repeat;
+
+}
+
+#board-preview{
+	height: 100%;
+	width: 100%;
+	background-color: rgb(230, 208, 230);
+	z-index: 3;
+}
+
+#settings-preview{
+	display: none;
+	height: 100%;
+	width: 100%;
+	background-color: #C9B9C9;
+	z-index: 3;
+}
+
+#bin-preview{
+	display: none;
+	height: 100%;
+	width: 100%;
+	background-color: #AD9AAD;
+	z-index: 3;
+}
+
+#menuFooter{
+  width: 600px;
+  height: 100px;
+  position: absolute;
+  top: 380px;
+  border: .5em solid;
+  background-color: #AFAFAF;
+}
+
+.left-hand-container{
+	height: 700px;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #bddbfa), color-stop(1, #80b5ea) );
+	background-color:#bddbfa;
+}
+
+#content{
+	height:700px;
+	margin-top: 0;
+}
+
+footer {
+    background: rgba(10,10,10,0.95);
+    border: 0;
+    line-height: 80px;
+    margin-top: 0 !important;
+}
+footer * {
+    line-height: inherit;
+}
+footer p {
+    margin-top: 0;
+    color: white;
+}
+footer .ink-navigation ul.menu.horizontal li {
+    margin-right: 2em;
+    line-height: inherit;
+}
+footer .ink-navigation ul.menu.horizontal li a {
+    padding: 0;
+    color: white;
+    text-decoration: underline;
+}
+
+footer .ink-navigation ul.menu.horizontal li a:hover {
+    color: #c91111;
+}

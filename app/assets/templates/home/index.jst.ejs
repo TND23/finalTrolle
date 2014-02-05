@@ -1,0 +1,91 @@
+<div class="ink-grid">
+
+
+	<div align="center" class="large-25 medium-50 small-100 push-left left-hand-container">
+
+		<div class="column-group button-container">
+				<a class="ink-button blue user-button" id="toBoard" href="<%= current_user.id %>/boards">
+				 Visit Your SuperBoard
+
+				</a>
+
+		</div>
+
+		<div class="column-group button-container">
+				<a class="ink-button blue  user-button" id="toSettings" href="<%= current_user.id %>/settings">
+					Modify Your Settings
+					 <div id="test"> 
+					 <i class="icon-gears fa-3x"></i>
+					 </div>
+				</a>
+		</div>
+
+		<div class="column-group button-container">
+			  <button class="ink-button blue large-25 push-center user-button" id="toBin">
+					Check Out Your Bin
+			  </button>
+		</div>
+
+	</div>
+
+	<div class="slide-out-holder large-40 medium-40">
+
+		<div id="board-preview">
+			<p>
+				The <strong>superboard</strong> will be your main base of operations on TrolleApp. 
+				Use your superboard to create a board or navigate to a pre-exsiting <strong>board</strong>.
+			</p>
+			<p>
+				Your superboard may look empty at first - don't sweat it. You'll fill it up soon enough with all the different tools you need to be organized.
+			</p>
+			<p>
+				Once you have created a board you will notice a visual representation of it appears on your superboard.
+				You may click on this representation OR on the name of your board from the drop-down list to visit your
+				board.
+			</p>
+			<p>
+				A board is composed of lists, which in turn hold cards for you to write reminders on. You may swap the lists and cards around freely, and create new lists and cards as is your wont.
+			</p>
+		</div>
+
+		<div id="settings-preview">
+			<div>
+				<nav class="ink-navigation">
+	   	<ul class="menu vertical">
+		      <li><a href="#">Account Settings</a>
+		       <ul class="submenu dropdown">
+			      		      <li><a href="#">Item</a>
+
+			      </ul>
+			      </li>
+
+		      <li><a href="#">Board Settings</a>
+			      <ul class="submenu dropdown">
+			      		      <li><a href="#">Item</a>
+
+			      </ul>
+		      </li>
+	   	</ul>
+	</nav>
+			</div>
+
+		</div>
+
+		<div id="bin-preview">
+
+		</div>
+
+	</div>
+
+		<div class="large-30 sidebar">
+			<h2 id="welcome"><%= current_user.user_name %></h2>
+
+			<div id="user-portrait" class="large-100 medium-100 small-100 push-center">
+			</div>
+
+
+			<div id="user-reminders">
+			</div>
+		</div>
+
+</div>

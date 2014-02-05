@@ -1,0 +1,42 @@
+
+<% var url = "/boards/" + board.id + "/lists" %>
+<div id="visible_board">
+
+	<nav class="ink-navigation hide-small">
+	  <ul class="menu horizontal flat rounded shadowed grey" id="home_menu">
+	    <form class="ink-form" id="listMenu" action=<%=url%> method="post">
+	    <li><a id="listForm" href="#">Create New List</a></li>
+	    </form>
+	  </ul>
+	</nav>
+
+	<div id="boardTitle">
+		<%= board.boardtitle %>
+		<div class="lists">
+			<% TrolleApp.listCollection = collection.models %>
+			<ul id="sortable">
+				<% for (var i = 0; i < TrolleApp.listCollection.length; i++){%>
+					<% var current_list = TrolleApp.listCollection[i] %>
+						<%= JST['lists/show']({current_list: current_list}) %>
+		      		<%};%>
+			</ul>
+	   	</div>
+  </div>
+ <footer id="my-foot">
+
+  <div class="ink-grid">
+
+      <nav class="ink-navigation  medium-100 small-100 small-100">
+          <ul class="menu horizontal">
+              <li><a href="/users/<%= current_user.id %>">Home</a></li>
+              <li><a href="#">SuperBoard</a></li>
+              <li><a href="/users/<%= current_user.id %>/settings">Settings</a></li>
+
+          </ul>
+      </nav>
+  </div>
+</footer>
+
+
+</div>
+ 
