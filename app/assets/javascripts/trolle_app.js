@@ -13,6 +13,7 @@ window.TrolleApp = {
     TrolleApp.Collections.Boards = new TrolleApp.Collections.Boards({visiting_user: TrolleApp.currentUser});
     TrolleApp.Collections.Cards = new TrolleApp.Collections.Cards();
 
+
     //get the router or assign it
     var routerOption = routerOption || 1;
     var visiting_user = currentUser || JSON.parse($('#user_boots').html()).current_user;

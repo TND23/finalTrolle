@@ -10,5 +10,4 @@ TrolleApp.Collections.Boards = Backbone.Collection.extend({
 		return url;
 	},
 
-	
 });

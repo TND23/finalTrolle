@@ -7,7 +7,6 @@ TrolleApp.Routers.BoardRouter = Support.SwappingRouter.extend({
   routes: {
     "" : "index",
     ":id/lists" : "findBoard",
-
   },
 
   index: function(){
@@ -29,7 +28,7 @@ TrolleApp.Routers.BoardRouter = Support.SwappingRouter.extend({
     //change this so that the list is not created every time we render the board.
     // this way we can have a meaningful default attribute of a list and it is likely this will fix the refresh problem
     TrolleApp.Collections.currentBoardLists.fetch();
-    
+
     $.ajax({
       url: "/users/"+ this.user_id +"/boards/"+id+".json",
       type:"GET",

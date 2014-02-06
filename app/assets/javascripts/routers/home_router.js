@@ -1,12 +1,11 @@
 TrolleApp.Routers.HomeRouter = Support.SwappingRouter.extend({
 
   initialize: function(options){
-		//lets get rid of these 'magic numbers' by explicitly referring the elements we want
+    //lets get rid of these 'magic numbers' by explicitly referring the elements we want
     this.visiting_user = options[0];
     this.user_boards = options[1];
     TrolleApp.visiting_user = this.visiting_user;
     TrolleApp.user_boards = this.user_boards;
-      console.log('homeRouter');
   },
 
   routes: {
@@ -21,9 +20,5 @@ TrolleApp.Routers.HomeRouter = Support.SwappingRouter.extend({
     $("#content").html(renderedHome.el);
   },
 
-
-  idk: function(){
-    console.log('hello');
-  },
 
 });

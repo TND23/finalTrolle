@@ -3,7 +3,6 @@ TrolleApp.Models.Board = Backbone.Model.extend({
 	initialize: function(){
 		var bTitle = this.escape("boardtitle");
 		this.boardtitle = bTitle;
-		console.log('e');
 	},
 
   urlRoot: function(){
@@ -11,5 +10,7 @@ TrolleApp.Models.Board = Backbone.Model.extend({
     return url;
   },
 
+
 	collection: TrolleApp.Collections.Lists,
+
 });

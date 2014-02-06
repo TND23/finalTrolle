@@ -123,9 +123,17 @@ TrolleApp.Views.BoardShow = Backbone.View.extend({
 	},
 
 	inspectCard: function(event){
-	console.log(event.target)
-  		$( this ).focus();
-       
+  // 		$( this ).focus();
+
+		// var list_id = this.getTarget(event);
+		// var list = this.collection.get(list_id);
+		// var curr_list = list.id;
+
+		// //this is the list object
+		// var list_container = $("#list"+curr_list);
+		// list_container[0].remove();
+		// list.destroy();
+
 	},
 
 	makeDraggable: function(){
