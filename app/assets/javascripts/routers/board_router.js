@@ -17,8 +17,6 @@ TrolleApp.Routers.BoardRouter = Support.SwappingRouter.extend({
     TrolleApp.Collections.Boards.fetch({reset: true, user_id: this.visiting_user});
     $("#board_content").empty();
     $('#board_content').append(boardView.render().el);
-
-    console.log('here');
   },
 
   findBoard: function(id){

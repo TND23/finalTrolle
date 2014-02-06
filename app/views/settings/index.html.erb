@@ -2,10 +2,10 @@
   <nav class="ink-navigation push-left large-100 medium-100 small-100">
         <ul class="menu horizontal">
             <li><a href="/">Home</a></li>
+            <li><p class="push-right"><%= button_to "Logout", session_url, :method => :delete %></p></li>
 
         </ul>
     </nav>
-    <p class="push-right"><%= button_to "Logout", session_url, :method => :delete %></p>
 </footer>
   
 <div class="ink-grid">
@@ -42,20 +42,30 @@
           </div>
         </div>
     </div>
+  
+  <div class="large-25 medium-50 small-50">
+      <p id="colorpickerHolder"> </p>     
+  </div>
+
 
   <script>
     $('#colorpickerHolder').ColorPicker({flat: true});
 
-    $(".colorpicker_new_color").ColorPicker({
-  onChange: function(hsb, hex, rgb){
-    $("#sampleList").css("background-color", "#" + hex)
-  }
-});
+    $("#colorpickerHolder").ColorPicker({
+      setNewColor : function (hsb, cal) {
+       
+        $("#sampleList").css('backgroundColor', '#' + HSBToHex(hsb));
+      },
+    });
+
+
+     $(".colorpicker_submit").click(function(){
+      
+    });
+
   </script>
 
-  <div class="large-25 medium-50 small-50">
-      <p id="colorpickerHolder"> </p>     
-  </div>
+ 
 </div>
 
 

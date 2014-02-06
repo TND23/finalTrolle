@@ -18,7 +18,12 @@
 
 .listCustomStyle{
   background-color: red;
+}
 
+#my-foot{
+  align-content: center;
+  width: 100%;
+  height: 100px;
 }
 
 .list-title{
@@ -42,11 +47,11 @@
 }
 
 .listContent{
-	height: 90%;
+	height: 85%;
 	width: 90%;
 	background-color: #000000;
 	float: right;
 	border-radius: 10px;
-    overflow-y: scroll;
+  overflow-y: scroll;
 }
 

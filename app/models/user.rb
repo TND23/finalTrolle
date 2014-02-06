@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   attr_accessor :board
   attr_reader :password
 
-  validates :password_digest, :presence => { :message => "Password can't be blank" }
+   validates :password_digest, :presence => { :message => "Password can't be blank" }
    validates :password, :length => { :minimum => 6, :allow_nil => true }
    validates :session_token, :presence => true
    validates :username, :presence => true

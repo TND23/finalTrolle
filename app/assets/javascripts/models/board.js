@@ -3,6 +3,7 @@ TrolleApp.Models.Board = Backbone.Model.extend({
 	initialize: function(){
 		var bTitle = this.escape("boardtitle");
 		this.boardtitle = bTitle;
+		console.log('e');
 	},
 
   urlRoot: function(){

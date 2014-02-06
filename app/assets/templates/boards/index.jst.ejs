@@ -9,7 +9,7 @@
           <% for(var i = 0; i < boards.length; i++){ %>
             <li class="indivBoard">
             	<a href="#<%=boards[i].attributes.id%>/lists" id="<%=boards[i].attributes.id %>">
-			<%= boards[i].attributes.boardtitle %>
+			<%= boards[i].escape("boardtitle") %>
 		</a>
             </li>
           <% } %>
@@ -28,7 +28,7 @@
 
 
    <% for(var i = 0; i < boards.length; i++){ %>
-                   <a id="#<%=boards[i].attributes.id%>DF" class="DF large-10" href="#<%=boards[i].attributes.id%>/lists">
-                <%= boards[i].attributes.boardtitle %>
+                   <a id="<%=boards[i].attributes.id%>DF" class="DF large-10" href="#<%=boards[i].attributes.id%>/lists">
+                <%= boards[i].escape("boardtitle") %>
                 </a>
           <% } %>

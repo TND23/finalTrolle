@@ -13,7 +13,7 @@
 			inAction,
 			charMin = 65,
 			visible,
-			tpl = '<div class="colorpicker"><div class="colorpicker_color"><div><div></div></div></div><div class="colorpicker_hue"><div></div></div><div class="colorpicker_new_color"></div><div class="colorpicker_current_color"></div><div class="colorpicker_hex"><input type="text" maxlength="6" size="6" /></div><div class="colorpicker_rgb_r colorpicker_field"><input type="text" maxlength="3" size="3" /><span></span></div><div class="colorpicker_rgb_g colorpicker_field"><input type="text" maxlength="3" size="3" /><span></span></div><div class="colorpicker_rgb_b colorpicker_field"><input type="text" maxlength="3" size="3" /><span></span></div><div class="colorpicker_hsb_h colorpicker_field"><input type="text" maxlength="3" size="3" /><span></span></div><div class="colorpicker_hsb_s colorpicker_field"><input type="text" maxlength="3" size="3" /><span></span></div><div class="colorpicker_hsb_b colorpicker_field"><input type="text" maxlength="3" size="3" /><span></span></div><div class="colorpicker_submit"></div></div>',
+			tpl = '<div class="colorpicker"><div class="colorpicker_color"><div id="gradientpicker"><div></div></div></div><div class="colorpicker_hue"><div></div></div><div class="colorpicker_new_color"></div><div class="colorpicker_current_color"></div><div class="colorpicker_hex"><input id="hexSub" type="text" maxlength="6" size="6" /></div><div class="colorpicker_rgb_r colorpicker_field"><input type="text" maxlength="3" size="3" /><span></span></div><div class="colorpicker_rgb_g colorpicker_field"><input type="text" maxlength="3" size="3" /><span></span></div><div class="colorpicker_rgb_b colorpicker_field"><input type="text" maxlength="3" size="3" /><span></span></div><div class="colorpicker_hsb_h colorpicker_field"><input type="text" maxlength="3" size="3" /><span></span></div><div class="colorpicker_hsb_s colorpicker_field"><input type="text" maxlength="3" size="3" /><span></span></div><div class="colorpicker_hsb_b colorpicker_field"><input type="text" maxlength="3" size="3" /><span></span></div><div class="colorpicker_submit"></div></div>',
 			defaults = {
 				eventName: 'click',
 				onShow: function () {},
@@ -57,6 +57,7 @@
 			},
 			setNewColor = function (hsb, cal) {
 				$(cal).data('colorpicker').newColor.css('backgroundColor', '#' + HSBToHex(hsb));
+				$("#sampleList").css('backgroundColor', '#' + HSBToHex(hsb));
 			},
 			keyDown = function (ev) {
 				var pressedKey = ev.charCode || ev.keyCode || -1;
@@ -70,6 +71,7 @@
 			},
 			change = function (ev) {
 				var cal = $(this).parent().parent(), col;
+			
 				if (this.parentNode.className.indexOf('_hex') > 0) {
 					cal.data('colorpicker').color = col = HexToHSB(fixHex(this.value));
 				} else if (this.parentNode.className.indexOf('_hsb') > 0) {
