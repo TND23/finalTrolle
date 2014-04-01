@@ -10,4 +10,8 @@ TrolleApp.Collections.Boards = Backbone.Collection.extend({
 		return url;
 	},
 
+  set_color: function(color){
+  	self.color = color;
+  }
+  	
 });

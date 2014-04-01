@@ -7,14 +7,8 @@ window.TrolleApp = {
     
     TrolleApp.csrfToken = $("meta[name='csrf-token']").attr('content');
     TrolleApp.currentUser = currentUser;
-
-    console.log(TrolleApp.currentUser);
-
     TrolleApp.Collections.Boards = new TrolleApp.Collections.Boards({visiting_user: TrolleApp.currentUser});
     TrolleApp.Collections.Cards = new TrolleApp.Collections.Cards();
-
-
-    //get the router or assign it
     var routerOption = routerOption || 1;
     var visiting_user = currentUser || JSON.parse($('#user_boots').html()).current_user;
 
@@ -33,12 +27,9 @@ window.TrolleApp = {
       success: function(){
         if (routerOption == 1) {
           TrolleApp.homeRouter = new TrolleApp.Routers.HomeRouter([visiting_user, user_boards]);
-					console.log('1');
 				}
         if (routerOption == 2){
-					console.log('2')
           TrolleApp.Collections.Cards.fetch();
-
           TrolleApp.boardRouter = new TrolleApp.Routers.BoardRouter();
         }
         Backbone.history.start();

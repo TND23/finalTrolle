@@ -7,9 +7,9 @@ gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'oj'
-gem 'pg'
-
-#gem 'sqlite3'
+gem 'paperclip'
+# gem 'pg'
+gem 'sqlite3'
 gem 'rabl'
 gem 'rails', '3.2.14'
 

@@ -12,7 +12,7 @@ class ListsController < ApplicationController
   def create
     @board = Board.find(params[:board_id])
     @list = List.new(params[:list])
-
+    @list.calculate_list_pos(@board)
     @list.board_id = @board.id
     if @list.save
     else
@@ -22,16 +22,11 @@ class ListsController < ApplicationController
 
   def destroy
     @list = List.find(params[:id])
-    if @list.cards
-      @list.cards.each do |card|
-        card.destroy
-      end
-    end
-
     if @list
       @list.destroy
     else
       render :json => "could not find list"
     end
   end
+  
 end

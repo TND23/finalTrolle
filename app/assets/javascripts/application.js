@@ -20,7 +20,7 @@
 //= require jquery-ui
 //= require colorpicker
 //= require eye
-//= require layout
+
 //= require utils
 //= require jquery.ui.draggable
 //= require jquery.ui.droppable

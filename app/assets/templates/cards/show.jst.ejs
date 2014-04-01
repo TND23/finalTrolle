@@ -1,7 +1,7 @@
 <div id="cardHolder<%=card.id%>" class="cardContainer push-center ui-draggable" >
 	<div class="cardTitle push-center" id="cardTitle<%= card.id%>"> <%= card.cardtitle %>
   	<button class="deleteACard ink-button blue push-left" id="deleteCard<%=card.id%>">X  </button>
-  	<button class="inspectACard ink-button red push-right" id="inspectCard<%=card.id%>"> 	<i class="icon-search"></i> </button>
+  	<button class="inspectACard ink-button red push-right" id="inspectCard<%=card.id%>"> +
 
   </div>
 	<div class="cardBody push-center" id="cardBody<%=card.id%>">
@@ -10,13 +10,11 @@
 					<%= card.cardbody %>
 
 				<%	} %>
-				<% if (card.cardbody === undefined || card.cardbody.length === 0){ %>
+				<% if (card.cardbody === undefined){ %>
 					<textarea id="area<%=card.id%>" class="card-input">
-				
-
 					</textarea>
 				<%	} %>
-		
+
 	</div>
 
 </div>

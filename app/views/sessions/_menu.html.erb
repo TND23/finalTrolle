@@ -1,0 +1,13 @@
+<footer>
+  <div class="ink-grid">
+      <nav class="ink-navigation push-left medium-100 small-100 small-100">
+          <ul class="menu horizontal">
+              <li><a href="/users/<%= current_user.id %>">Home</a></li>
+              <li><a href="/users/<%= current_user.id %>/boards">Boards</a></li>
+              <li><a href="/users/<%= current_user.id %>/settings">Settings</a></li>
+              <li><a href="#">Bin</a></li>
+          </ul>
+      </nav>
+      <p class="push-right"><%= button_to "Logout", session_url, :method => :delete %></p>
+  </div>
+</footer>

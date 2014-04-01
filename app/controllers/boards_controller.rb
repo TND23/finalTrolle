@@ -14,6 +14,7 @@ class BoardsController < ApplicationController
     user = User.find(params[:user_id])
     @board = Board.new(params[:board])
     @board.user_id = user.id
+    @board.max_list_order = 0
     if @board.save
       redirect_to user_boards_url
     else

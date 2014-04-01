@@ -15,8 +15,8 @@ cursor: -webkit-grab;
 #slideShowDiv{
   height: 400px;
   line-height: 2;
-
-  background-color: #CBE4FF
+  box-shadow: 0px 10px 15px rgba(68, 68, 68, 0.63);
+  background-color: #CBE4FF;
 }
 
 #pass-text{
@@ -35,7 +35,6 @@ cursor: -webkit-grab;
     position: relative; 
     width: 50%; 
     height: 75%; 
-    padding: 10px; 
     z-index: 3;
     background-color: white;
     box-shadow: 0 0 20px rgba(0,0,0,0.4); 
@@ -43,10 +42,7 @@ cursor: -webkit-grab;
 
 #slideshow > div { 
     position: absolute; 
-    top: 10px; 
-    left: 10px; 
-    right: 10px; 
-    bottom: 10px; 
+
 }
 
 #signInDiv{
@@ -94,21 +90,17 @@ cursor: -webkit-grab;
 }
 
 #createAccountDiv{
-  float: right;
   text-align: center;
   text-shadow: white;
   font-size: xx-large;
   position: relative;
-  right: 600px;
 }
 
 #signInDiv{
-  float: right;
   text-align: center;
   text-shadow: white;
   font-size: xx-large;
   position: relative;
-  right: 600px;
 }
 
 #raveReviews{
@@ -124,25 +116,30 @@ cursor: -webkit-grab;
   float: right;
 }
 
+
 #organizeImage{
-  height: 267px;
-  width: 612px;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
-  background: url('Organize_ideas.png');
+  background-image: url('Organize_ideas.png');
 }
 
 #makeLists{
-  height: 267px;
-  width: 612px;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
-  background: url('lists2.png');
+  background-image: url('lists2.png');
 }
 
+
 #swapCards{
-  height: 267px;
-  width: 612px;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
-  background: url('slide3_edited-3.png');
+  background-image: url('slide3_edited-3.png');
 }
 
 #welcomeLogo{

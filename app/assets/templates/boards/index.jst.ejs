@@ -1,9 +1,8 @@
 <% var boards = boards.models %>
 
 <div id="nav_container">
-  <nav class="ink-navigation hide-small">
+  <nav class="ink-navigation">
     <ul class="menu horizontal flat rounded shadowed grey" id="menu">
-    <li><a id="home" href="#">Home</a></li>
       <li><a id="boardList" href="/">My Boards</a>
         <ul class="submenu">
           <% for(var i = 0; i < boards.length; i++){ %>
@@ -28,7 +27,9 @@
 
 
    <% for(var i = 0; i < boards.length; i++){ %>
-                   <a id="<%=boards[i].attributes.id%>DF" class="DF large-10" href="#<%=boards[i].attributes.id%>/lists">
+                   <a id="<%=boards[i].attributes.id%>board-holder" class="board-holder large-10" href="#<%=boards[i].attributes.id%>/lists">
                 <%= boards[i].escape("boardtitle") %>
                 </a>
           <% } %>
+
+

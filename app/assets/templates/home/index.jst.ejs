@@ -12,16 +12,15 @@
 		</div>
 
 		<div class="column-group button-container">
-				<a class="ink-button blue  user-button" id="toSettings" href="<%= current_user.id %>/settings">
+				<a class="ink-button blue  user-button" id="toSettings" href="<%= current_user.id %>/settings"  disabled>
 					Modify Your Settings
 					 <div id="test"> 
-					 <i class="icon-gears fa-3x"></i>
 					 </div>
 				</a>
 		</div>
 
 		<div class="column-group button-container">
-			  <button class="ink-button blue large-25 push-center user-button" id="toBin">
+			  <button class="ink-button blue large-25 push-center user-button" id="toBin" disabled>
 					Check Out Your Bin
 			  </button>
 		</div>
@@ -53,16 +52,24 @@
 				<nav class="ink-navigation">
 	   	<ul class="menu vertical">
 		      <li><a href="#">Account Settings</a>
+		      
 		       <ul class="submenu dropdown">
-			      		      <li><a href="#">Item</a>
-
+    		      <li><a href="#">Name</a></li>
 			      </ul>
+
+			      <ul class="submenu dropdown">
+			      	<li><a href="#">Account Status</a></li>
+			      </ul>
+
+			      <ul class="submenu dropdown">
+			      	<li><a href="#">Reminders</a></li>
+			      </ul>
+
 			      </li>
 
 		      <li><a href="#">Board Settings</a>
 			      <ul class="submenu dropdown">
-			      		      <li><a href="#">Item</a>
-
+    		      <li><a href="#">Board Styles</a></li>
 			      </ul>
 		      </li>
 	   	</ul>
@@ -82,7 +89,6 @@
 
 			<div id="user-portrait" class="large-100 medium-100 small-100 push-center">
 			</div>
-
 
 			<div id="user-reminders">
 			</div>

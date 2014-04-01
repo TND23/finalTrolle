@@ -4,7 +4,7 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 development:
-  adapter: postgresql
+  adapter: sqlite3
   database: development_database
   pool: 5
   timeout: 5000
@@ -15,79 +15,15 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  adapter: postgresql
+  adapter: sqlite3
   database: test_database
   pool: 5
   timeout: 5000
   host: localhost
 
 production:
-  adapter: postgresql
+  adapter: sqlite3
   database: production_database
   pool: 5
   timeout: 5000
   host: localhost
-# CONFLICT (add/add): Merge conflict in development_database
-# Auto-merging db/schema.rb
-# CONFLICT (add/add): Merge conflict in db/schema.rb
-# Auto-merging config/database.yml
-# CONFLICT (add/add): Merge conflict in config/database.yml
-# Auto-merging app/views/users/show.html.erb
-# CONFLICT (add/add): Merge conflict in app/views/users/show.html.erb
-# Auto-merging app/views/settings/index.html.erb
-# CONFLICT (add/add): Merge conflict in app/views/settings/index.html.erb
-# Auto-merging app/views/sessions/new.html.erb
-# CONFLICT (add/add): Merge conflict in app/views/sessions/new.html.erb
-# Auto-merging app/views/layouts/application.html.erb
-# CONFLICT (add/add): Merge conflict in app/views/layouts/application.html.erb
-# Auto-merging app/models/user.rb
-# CONFLICT (add/add): Merge conflict in app/models/user.rb
-# Auto-merging app/models/list.rb
-# CONFLICT (add/add): Merge conflict in app/models/list.rb
-# Auto-merging app/controllers/boards_controller.rb
-# CONFLICT (add/add): Merge conflict in app/controllers/boards_controller.rb
-# Auto-merging app/assets/templates/home/index.jst.ejs
-# CONFLICT (add/add): Merge conflict in app/assets/templates/home/index.jst.ejs
-# Auto-merging app/assets/templates/boards/show.jst.ejs
-# CONFLICT (add/add): Merge conflict in app/assets/templates/boards/show.jst.ejs
-# Auto-merging app/assets/templates/boards/index.jst.ejs
-# CONFLICT (add/add): Merge conflict in app/assets/templates/boards/index.jst.ejs
-# Auto-merging app/assets/stylesheets/users.css.scss
-# CONFLICT (add/add): Merge conflict in app/assets/stylesheets/users.css.scss
-# Auto-merging app/assets/stylesheets/sessions.css.scss
-# CONFLICT (add/add): Merge conflict in app/assets/stylesheets/sessions.css.scss
-# Auto-merging app/assets/stylesheets/lists.css.scss
-# CONFLICT (add/add): Merge conflict in app/assets/stylesheets/lists.css.scss
-# Auto-merging app/assets/stylesheets/boards.css.scss
-# CONFLICT (add/add): Merge conflict in app/assets/stylesheets/boards.css.scss
-# Auto-merging app/assets/stylesheets/application.css
-# CONFLICT (add/add): Merge conflict in app/assets/stylesheets/application.css
-# Auto-merging app/assets/javascripts/views/board/board_show.js
-# CONFLICT (add/add): Merge conflict in app/assets/javascripts/views/board/board_s
-# how.js
-# Auto-merging app/assets/javascripts/trolle_app.js
-# CONFLICT (add/add): Merge conflict in app/assets/javascripts/trolle_app.js
-# Auto-merging app/assets/javascripts/routers/home_router.js
-# CONFLICT (add/add): Merge conflict in app/assets/javascripts/routers/home_router
-# .js
-# Auto-merging app/assets/javascripts/routers/board_router.js
-# CONFLICT (add/add): Merge conflict in app/assets/javascripts/routers/board_route
-# r.js
-# Auto-merging app/assets/javascripts/models/list.js
-# CONFLICT (add/add): Merge conflict in app/assets/javascripts/models/list.js
-# Auto-merging app/assets/javascripts/models/board.js
-# CONFLICT (add/add): Merge conflict in app/assets/javascripts/models/board.js
-# Auto-merging app/assets/javascripts/collections/boards.js
-# CONFLICT (add/add): Merge conflict in app/assets/javascripts/collections/boards.
-# js
-# Auto-merging app/assets/javascripts/application.js
-# CONFLICT (add/add): Merge conflict in app/assets/javascripts/application.js
-# Auto-merging app/assets/images/trollface_small.png
-# CONFLICT (add/add): Merge conflict in app/assets/images/trollface_small.png
-# Auto-merging app/assets/images/lists.png
-# CONFLICT (add/add): Merge conflict in app/assets/images/lists.png
-# Auto-merging Gemfile
-# CONFLICT (add/add): Merge conflict in Gemfile
-# Automatic merge failed; fix conflicts and then commit the result.
-
-# C:\Documents and Settings\Tommy\Desktop\finalTrolle-master>

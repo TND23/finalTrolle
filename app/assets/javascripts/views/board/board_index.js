@@ -35,21 +35,17 @@ TrolleApp.Views.BoardIndex = Backbone.View.extend({
     event.preventDefault();
     var that = this;
     var id = this.user.id;
-    var title = $('#board_boardtitle').val()
+    var title = $('#board_boardtitle').val();
     if(title.length < 1){
       alert("please give your board a title");
-      window.location = "users/"+id+"/boards";
-    }
-    else{
-
-      var newBoard = new TrolleApp.Models.Board({boardtitle: title, user_id: id}, {collection: that.collection});
+    } else {
+      var newBoard = new TrolleApp.Models.Board({boardtitle: title, user_id: id, max_list_order: 0}, {collection: that.collection});
       TrolleApp.newBoard = newBoard;
-			//listenTo allows dynamic rendering
       newBoard.save(newBoard.attributes,
 				{
 					success: function(){
 						that.collection.add(newBoard);
-                                       user_boards.push(newBoard);
+            user_boards.push(newBoard);
 						that.collection.fetch();
 					},
 					error: function(){alert("something has gone wrong in saving");}
